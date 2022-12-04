@@ -23,12 +23,4 @@ Surface = -1;
 
 added_sprite = sprite_add("sprite_add_test.png", 0, 0, 0, 0, 0);
 
-
-
-if (!instance_exists(imgui)) {
-		instance_create_depth(0, 0, depth-10, imgui);
-		Font = imguigml_add_font_from_ttf("simhei.ttf", 14.0);	
-}
-else if(!ShowTestWindow){
-		ShowTestWindow = true;	
-}
+Font = imguigml_add_font_from_ttf("simhei.ttf", 14.0);	

@@ -1763,6 +1763,7 @@ __ImguiIg(imguigml_texteditor_set_palette)
 ///@param {Boolean} [_border=false]
 function imguigml_texteditor_render() {
 	var in = __Imgui_in, argi=0;
+
 	sr_buffer_write(in, argument[argi++], ERousrData.Int32);
 	sr_buffer_write(in, argument[argi++], ERousrData.String);
 	sr_buffer_write(in, argument_count > argi ? argument[argi] : 0, ERousrData.Float); argi++;

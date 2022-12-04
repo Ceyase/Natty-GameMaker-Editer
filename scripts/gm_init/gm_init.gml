@@ -15,4 +15,8 @@ function gm_init(){
 	Script:{},
 	CodeEditer:{}
 	}
+	
+	global.comoutput = ""
+	global.projectRootDir = ""
+	global.projectFile = ""
 }

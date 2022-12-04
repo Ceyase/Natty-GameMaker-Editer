@@ -5,6 +5,7 @@ function window_mainbar(){
 			if(imguigml_menu_item("Open Project","CTRL+O")){
 				var FilePath = get_open_filename_ext("GameMaker Project File|*.yyp","",working_directory,"Choose the GameMaker Project")
 				if (FilePath != ""){
+					global.projectFile = FilePath
 					var FileJson = file_text_read_json(FilePath)
 					var Filepath = SplitPath(FilePath)
 					gm_project_load(FileJson,Filepath[0])
@@ -45,7 +46,9 @@ function window_mainbar(){
 			imguigml_end_menu()
 		}
 		if(imguigml_begin_menu("Build")){
-			if(imguigml_menu_item("Run","F5")){}
+			if(imguigml_menu_item("Run","F5")){
+				gm_build_run()
+			}
 			if(imguigml_menu_item("Debug","F6")){}
 			if(imguigml_menu_item("Clean","CTRL+F7")){}
 			imguigml_separator()

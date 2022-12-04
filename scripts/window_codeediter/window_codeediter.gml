@@ -35,16 +35,14 @@ function window_codeediter(){
 		var size = imguigml_get_window_size();
 		if(!ret[1]){
 			file_text_write_full(script_path,script_value)
-			imguigml_texteditor_delete(variable_struct_get(global.temp.CodeEditer,script_name))
+			imguigml_texteditor_destroy(variable_struct_get(global.temp.CodeEditer,script_name))
 			variable_struct_remove(global.temp.Script,script_name)
 			variable_struct_remove(global.temp.CodeEditer,script_name)
 		}
 		if (ret[0] && ret[1]) {
 			if(variable_struct_exists(global.temp.CodeEditer,script_name)){
 				ce = variable_struct_get(global.temp.CodeEditer,script_name)
-				
 				imguigml_texteditor_render(ce, script_name+"##CodeEditer", size[0]-100,size[1]-100);
-				
 				script_value = imguigml_texteditor_get_text(ce)
 				variable_struct_set(global.temp.Script,script_name,[script_value,script_path])
 			}else{
@@ -54,6 +52,6 @@ function window_codeediter(){
 				imguigml_texteditor_set_text(ce,script_value)
 			}
 		}
+		imguigml_end()
 	}
-	show_debug_message(global.temp.CodeEditer)
 }

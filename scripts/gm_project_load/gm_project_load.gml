@@ -26,5 +26,6 @@ function gm_project_load(projectData,projectRootDir){
 		var file = projectData.resources[i].id.path
 		gm_resources_load(projectRootDir+file)
 	}
-
+	
+	global.projectRootDir = projectRootDir
 }
